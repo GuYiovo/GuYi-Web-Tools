@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GuYi Web Tools Pro - 在线代码混淆与封装工具</title>
+    <meta name="description" content="专业的在线代码工具箱：CSS封装隔离、HTML加密保护、JavaScript高级混淆。免费、安全、高效的前端开发辅助工具。">
+    <meta name="keywords" content="JS混淆,CSS封装,HTML加密,前端安全,GuYi Tools">
+    
+    <!-- 网站图标 -->
+    <link rel="icon" href="http://q.qlogo.cn/headimg_dl?dst_uin=156440000&spec=640&img_type=jpg">
+    
+    <!-- 引入 Tailwind CSS (生产环境建议使用 CLI 构建，此处为便携版配置) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- 引入 Phosphor Icons -->
+    <script src="https://unpkg.zhimg.com/@phosphor-icons/web"></script>
+
+    <!-- 字体 -->
+    <link href="https://fonts.font.im/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- 预加载动画样式，防止JS加载前的白屏尴尬 -->
+    <style>
+        #app-loader { position: fixed; inset: 0; background: #0f172a; z-index: 9999; display: flex; justify-content: center; align-items: center; transition: opacity 0.5s; }
+        .spinner { width: 40px; height: 40px; border: 4px solid rgba(255,255,255,0.1); border-left-color: #818cf8; border-radius: 50%; animation: spin 1s linear infinite; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+    </style>
+</head>
+<body>
+    <!-- 初始加载层，JS 就绪后移除 -->
+    <div id="app-loader">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- 主应用容器，内容由 JS 生成 -->
+    <div id="app"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
